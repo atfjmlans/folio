@@ -250,8 +250,8 @@
         });
 
         $('.testimonials').slick({
-            arrows: true,
-            dots: false,
+            arrows: false,
+            dots: true,
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -303,12 +303,6 @@
     };
 
 
-   /* Placeholder Plugin Settings
-    * ------------------------------------------------------ */
-    var clPlaceholder = function() {
-        $('input, textarea, select').placeholder();  
-    };
-
 
    /* Alert Boxes
     * ------------------------------------------------------ */
@@ -327,36 +321,77 @@
         
         /* local validation */
         $('#contactForm').validate({
+            rules: {
+                contactName: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 50
+                },
+                contactEmail: {
+                    required: true,
+                    email: true,
+                    maxlength: 50
+                },
+                contactPhone: {
+                    required: true,
+                    number: true,
+                    minlength: 10,
+                    maxlength: 15
+                },
+                contactMessage: {
+                    required: true,
+                    minlength: 20,
+                    maxlength: 4028
+                }
+            },
+            messages: {
+                contactName: {
+                    required: "come on, you have a name, don't you?",
+                    minlength: "your name must consist of at least 3 characters",
+                    maxlength: "your name must not exeed 50 characters limit"
+                },
+                contactEmail: {
+                    required: "no email, no message",
+                    maxlength: "your email must not exeed 50 characters limit"
+                },
+                contactPhone: {
+                    required: "Ahem..., you want me to reach you, right?",
+                    minlength: "your number must consist of at least 10 digit",
+                    maxlength: "your number must not exeed 15 digit limit"
+                },
+                contactMessage: {
+                    required: "um...yea, you have to write something to send this form.",
+                    minlength: "thats all? really?",
+                    maxlength: "are you sure it is just a message?"
+                }
+            },
         
             /* submit via ajax */
             submitHandler: function(form) {
     
                 var sLoader = $('.submit-loader');
+                var formUrl = $(form).attr('action');
+                var formData = $(form).serialize();
     
                 $.ajax({
     
                     type: "POST",
-                    url: "inc/sendEmail.php",
-                    data: $(form).serialize(),
+                    url: formUrl,
+                    data: formData,
                     beforeSend: function() { 
     
                         sLoader.slideDown("slow");
     
                     },
-                    success: function(msg) {
+                    success: function(response) {
     
                         // Message was sent
-                        if (msg == 'OK') {
+                        if (response.statusCode == 200) {
+                            form.reset();
                             sLoader.slideUp("slow"); 
-                            $('.message-warning').fadeOut();
-                            $('#contactForm').fadeOut();
-                            $('.message-success').fadeIn();
-                        }
-                        // There was an error
-                        else {
-                            sLoader.slideUp("slow"); 
-                            $('.message-warning').html(msg);
-                            $('.message-warning').slideDown("slow");
+                            $('.message-success').html(response.message);
+                            $('.message-success').slideDown("slow");
+                            $('.message-success').fadeOut(3000);
                         }
     
                     },
@@ -365,6 +400,7 @@
                         sLoader.slideUp("slow"); 
                         $('.message-warning').html("Something went wrong. Please try again.");
                         $('.message-warning').slideDown("slow");
+                        $('.message-warning').fadeOut(3000);
     
                     }
     
@@ -413,12 +449,12 @@
 
         $.ajaxChimp.translations.es = {
             'submit': 'Submitting...',
-            0: '<i class="fa fa-check"></i> We have sent you a confirmation email',
-            1: '<i class="fa fa-warning"></i> You must enter a valid e-mail address.',
-            2: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-            3: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-            4: '<i class="fa fa-warning"></i> E-mail address is not valid.',
-            5: '<i class="fa fa-warning"></i> E-mail address is not valid.'
+            0: '<i class="fas fa-check"></i> We have sent you a confirmation email',
+            1: '<i class="fas fa-warning"></i> You must enter a valid e-mail address.',
+            2: '<i class="fas fa-warning"></i> E-mail address is not valid.',
+            3: '<i class="fas fa-warning"></i> E-mail address is not valid.',
+            4: '<i class="fas fa-warning"></i> E-mail address is not valid.',
+            5: '<i class="fas fa-warning"></i> E-mail address is not valid.'
         } 
 
     };
@@ -457,7 +493,6 @@
         clMasonryFolio();
         clSlickSlider();
         clSmoothScroll();
-        clPlaceholder();
         clAlertBoxes();
         clContactForm();
         clAOS();

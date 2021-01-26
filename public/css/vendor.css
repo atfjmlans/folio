@@ -1112,6 +1112,7 @@
     z-index: 1500;
     -webkit-text-size-adjust: 100%;
     /* create separate layer, to avoid paint on window.onscroll in webkit/blink */
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     outline: none;
 }
@@ -1179,6 +1180,7 @@
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     will-change: opacity;
 }
 
@@ -1238,6 +1240,7 @@
 
 .pswp__container, .pswp__zoom-wrap {
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .pswp__item {
@@ -1265,6 +1268,7 @@
 
 .pswp__img--placeholder {
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 
@@ -1388,7 +1392,7 @@ over element that should close gallery
 @media (-webkit-min-device-pixel-ratio: 1.1), (-webkit-min-device-pixel-ratio: 1.09375), (min-resolution: 105dpi), (min-resolution: 1.1dppx) {
     /* Serve SVG sprite if browser supports SVG and resolution is more than 105dpi */
     .pswp--svg .pswp__button, .pswp--svg .pswp__button--arrow--left:before, .pswp--svg .pswp__button--arrow--right:before {
-        background-image: url(images/photoswipe/default-skin.svg);
+        background-image: url(../images/photoswipe/default-skin.svg);
     }
     .pswp--svg .pswp__button--arrow--left, .pswp--svg .pswp__button--arrow--right {
         background: none;
@@ -1504,6 +1508,7 @@ Arrow buttons hit area
     -webkit-transition: opacity 0.25s ease-out;
     transition: opacity 0.25s ease-out;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     will-change: opacity;
 }
 
@@ -1528,6 +1533,7 @@ Arrow buttons hit area
     -webkit-transition: -webkit-transform 0.25s;
     transition: transform 0.25s;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     will-change: transform;
 }
 
@@ -1854,6 +1860,7 @@ a.pswp__share--download:hover {
 
 .pswp__caption, .pswp__top-bar, .pswp--has_mouse .pswp__button--arrow--left, .pswp--has_mouse .pswp__button--arrow--right {
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     will-change: opacity;
     -webkit-transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
     transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
@@ -1914,5 +1921,3 @@ a.pswp__share--download:hover {
     background: none;
 }
 
-
-/*# sourceMappingURL=vendor.css.map */
