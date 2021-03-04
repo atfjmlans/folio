@@ -2,9 +2,15 @@
     ================================================== -->
     <header class="s-header">
 
+        <div class="header-logo">
+            <a class="site-logo" href="{{ path('home') }}">
+                <img src="{{ asset('images/logo.png') }}" alt="Homepage">
+            </a>
+        </div>
+        
         <nav class="header-nav">
 
-            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+            <a href="#" class="header-nav__close" title="close"><span>Close</span></a>
 
             <div class="header-nav__content">
                 <h3>Navigation</h3>
@@ -21,19 +27,19 @@
     
                 <ul class="header-nav__social">
                     <li>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="{{ absolute_url('https://linkedin.com/in/atfjmlans') }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="{{ absolute_url('https://twitter.com/atfjmlans') }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="{{ absolute_url('https://github.com/atfjmlans') }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="{{ absolute_url('https://join.skype.com/invite/Yj0y7MtNA9qd') }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-skype"></i></a>
                     </li>
                     <li>
-                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="mailto:atifjamalansari@outlook.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
                     </li>
                 </ul>
 
