@@ -413,7 +413,7 @@
                     success: function(response) {
     
                         // Message was sent
-                        if (response.statusCode == 200) {
+                        if (response.status == 200) {
                             form.reset();
                             sLoader.slideUp("slow"); 
                             $('.message-success').html(response.message);

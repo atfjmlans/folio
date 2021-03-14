@@ -49,9 +49,10 @@ class FrontendController extends AbstractController
             // actually executes the queries (i.e. the INSERT query)
             $entityManager->flush($contact);
     
-            // creates a json Response with a 200 status code (the default)
-            $response = new Response();
-            return $this->json($response, $status = 200, $headers = ['Content-Type', 'application/json']);
+           // returns '{"data":"$contact", "status":200}' and sets the proper Content-Type header
+            return $this->json(['data' => $contact, 'status' => 200]);
+            // the shortcut defines three optional arguments
+            // return $this->json($data, $status = 200, $headers = [], $context = []);
         } else {
             return 'Something went wrong, please try again!';
         }
