@@ -354,6 +354,11 @@
                     minlength: 3,
                     maxlength: 50
                 },
+                contactSubject: {
+                    required: true,
+                    minlength: 5,
+                    maxlength: 100
+                },
                 contactEmail: {
                     required: true,
                     email: true,
@@ -367,8 +372,7 @@
                 },
                 contactMessage: {
                     required: true,
-                    minlength: 20,
-                    maxlength: 4028
+                    minlength: 20
                 }
             },
             messages: {
@@ -377,12 +381,17 @@
                     minlength: "your name must consist of at least 3 characters",
                     maxlength: "your name must not exeed 50 characters limit"
                 },
+                contactSubject: {
+                    required: "psst..., your subject will help me to sort and reply your message faster",
+                    minlength: "your subject must consist of at least 5 characters",
+                    maxlength: "your subject must not exeed 100 characters limit"
+                },
                 contactEmail: {
                     required: "no email, no message",
                     maxlength: "your email must not exeed 50 characters limit"
                 },
                 contactPhone: {
-                    required: "Ahem..., you want me to reach you, right?",
+                    required: "ahem..., you want me to reach you, right?",
                     minlength: "your number must consist of at least 10 digit",
                     maxlength: "your number must not exeed 15 digit limit"
                 },

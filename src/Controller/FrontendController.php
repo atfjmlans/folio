@@ -8,6 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+
 
 class FrontendController extends AbstractController
 {
@@ -24,7 +28,7 @@ class FrontendController extends AbstractController
     /**
      * @Route("/", name="contact", methods={"POST"})
      */
-    public function contact(Request $request): Response
+    public function contact(Request $request, MailerInterface $mailer): Response
     {
         
         if ($request->isXmlHttpRequest()) {
@@ -48,7 +52,22 @@ class FrontendController extends AbstractController
     
             // actually executes the queries (i.e. the INSERT query)
             $entityManager->flush($contact);
-    
+            
+            $email = (new TemplatedEmail())
+                ->from($contactEmail)
+                ->to('atifjamalansari@outlook.com')
+                ->subject('Reaching out for a new project or just saying hello via Folio, Personal Portfolio.')
+                // path of the Twig template to render
+                ->htmlTemplate('backend/emails/contact.html.twig')
+                // pass variables (name => value) to the template
+                ->context([
+                    'name' => $contactName,
+                    'mail' => $contactEmail,
+                    'phone' => $contactPhone,
+                    'message' => $contactMessage,
+                ]);
+            $mailer->send($email);
+
            // returns '{"data":"$contact", "status":200}' and sets the proper Content-Type header
             return $this->json(['data' => $contact, 'status' => 200]);
             // the shortcut defines three optional arguments

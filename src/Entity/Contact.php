@@ -23,6 +23,11 @@ class Contact
     private $contactName;
 
     /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $contactSubject;
+
+    /**
      * @ORM\Column(type="string", length=50)
      */
     private $contactEmail;
@@ -50,6 +55,18 @@ class Contact
     public function setContactName(string $contactName): self
     {
         $this->contactName = $contactName;
+
+        return $this;
+    }
+
+    public function getContactSubject(): ?string
+    {
+        return $this->contactSubject;
+    }
+
+    public function setContactSubject(string $contactSubject): self
+    {
+        $this->contactSubject = $contactSubject;
 
         return $this;
     }
