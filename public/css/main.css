@@ -689,7 +689,7 @@ select {
 }
 
 textarea {
-    min-height: 25rem;
+    min-height: 13rem;
 }
 
 input[type="email"]:focus,
@@ -3601,3 +3601,55 @@ footer .row {
 }
 
 
+
+/* ===================================================================
+ * # privacy
+ *
+ * ------------------------------------------------------------------- */
+.s-privacy {
+    padding-top: 16.2rem;
+    padding-bottom: 16.8rem;
+    background-color: #F5F5F5;
+    color: #757575;
+    position: relative;
+}
+
+
+
+/* ===================================================================
+ * # terms
+ *
+ * ------------------------------------------------------------------- */
+.s-terms {
+    padding-top: 16.2rem;
+    padding-bottom: 16.8rem;
+    background-color: #F5F5F5;
+    color: #757575;
+    position: relative;
+}
+
+
+
+/* ===================================================================
+ * # sitemap
+ *
+ * ------------------------------------------------------------------- */
+.s-sitemap {
+    padding-top: 16.2rem;
+    padding-bottom: 16.8rem;
+    background-color: #F5F5F5;
+    color: #757575;
+    position: relative;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## content
+ * ------------------------------------------------------------------- */
+.privacy, .terms, .sitemap p {
+    font-family: "lora-regular", serif;
+    font-size: 2rem;
+    line-height: 1.8;
+    color: #555555;
+    margin-bottom: 6rem;
+}

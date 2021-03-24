@@ -26,11 +26,31 @@ class FrontendController extends AbstractController
     }
     
     /**
+     * @Route("/privacy", name="privacy", methods={"GET"})
+     */
+    public function privacy(): Response
+    {
+        return $this->render('frontend/privacy.html.twig', [
+            'controller_name' => 'FrontendController',
+        ]);
+    }
+
+    /**
      * @Route("/terms", name="terms", methods={"GET"})
      */
     public function terms(): Response
     {
         return $this->render('frontend/terms.html.twig', [
+            'controller_name' => 'FrontendController',
+        ]);
+    }
+
+    /**
+     * @Route("/sitemap", name="sitemap", methods={"GET"})
+     */
+    public function sitemap(): Response
+    {
+        return $this->render('frontend/sitemap.html.twig', [
             'controller_name' => 'FrontendController',
         ]);
     }
