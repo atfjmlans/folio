@@ -31,12 +31,12 @@
             },
             messages: {
                 username: {
-                    required: "come on, you need an account, don't you?",
+                    required: "no username, no account, that's it",
                     minlength: "your username must consist of at least 3 characters",
                     maxlength: "your username must not exeed 50 characters limit"
                 },
                 password: {
-                    required: "no password, no account, that's it",
+                    required: "come on, you need an account, don't you?",
                     minlength: "your password must consist of at least 6 characters",
                     maxlength: "your password must not exeed 20 characters limit"
                 },
