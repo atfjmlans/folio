@@ -1,21 +1,160 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %} Atif Jamal Ansari | Register {% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
 
-    <h1>Register</h1>
+    <!-- contact
+        ================================================== -->
+    <section id="contact" class="s-contact">
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.username) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+        <div class="overlay"></div>
+        <div class="contact__line"></div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Welcome New User !</h3>
+                <h1 class="display-2 display-2--light">Register to access the dashboard and manage the web application</h1>
+            </div>
+        </div>
+
+        <div class="row contact-content" data-aos="fade-up">
+
+            <div class="contact-primary">
+
+                <h3 class="h5">Please provide the information to register, if you already have an account please login <a
+                        href="{{ path('login') }}">here</a></h3>
+
+                {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert-box alert-box--error hideit">
+                        <p>{{ flashError }}</p>
+                        <i class="fa fa-times alert-box__close" aria-hidden="true"></i>
+                    </div>
+                {% endfor %}
+                
+
+                {{ form_start(registrationForm, {'attr':{'id': 'registrationForm','novalidate': 'novalidate'}}) }}
+
+                    <fieldset>
+                        <div class="form-field">
+                            {{ form_widget(registrationForm.username, {'full_name': 'username', 'id': 'username', 'attr': {'placeholder': 'Username', 'class': 'full-width'}}) }}
+                        </div>
+                        <div class="form-field">
+                            {{ form_widget(registrationForm.password, {'full_name': 'password', 'id': 'password', 'attr': {'placeholder': 'Password', 'class': 'full-width'}}) }}
+                        </div>
+                        <div class="full-width">
+                            <label class="add-top">
+                                {{ form_widget(registrationForm.roles, {'full_name': 'roles[]', 'id': 'roles'}) }}
+                                <span class="label-text" name="roles[]" value="Administrator">
+                                    <small>
+                                        Is Administrator?
+                                    </small>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="full-width">
+                            <label class="half-bottom">
+                                {{ form_widget(registrationForm.terms, {'full_name': 'terms', 'id': 'terms'}) }}
+                                <span class="label-text" name="terms">
+                                    <small>
+                                        I've read and agreed to the <a href="{{ path('terms') }}" target="_blank" rel="noopener noreferrer">terms and conditions</a> 
+                                    </small>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="form-field">
+                            <button class="full-width btn--primary">Submit</button>
+                            <div class="submit-loader">
+                                <div class="text-loader">Sending...</div>
+                                <div class="s-loader">
+                                    <div class="bounce1"></div>
+                                    <div class="bounce2"></div>
+                                    <div class="bounce3"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                {{ form_end(registrationForm) }}
+
+                <!-- contact-warning -->
+                <div class="message-warning">
+                    Something went wrong. Please try again.
+                </div>
+
+                <!-- contact-success -->
+                <div class="message-success">
+                    Your message was sent, thank you!<br>
+                </div>
+
+            </div> <!-- end contact-primary -->
+
+            <div class="contact-secondary">
+                <div class="contact-info">
+
+                    <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
+
+                    <div class="cinfo">
+                        <h5>Where to Find Me</h5>
+                        <p>
+                            Mominpur, Atala<br>
+                            Prayagraj, UP<br>
+                            211003 IN
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Email Me At</h5>
+                        <p>
+                            atifjamalansari@outlook.com<br>
+                        </p>
+                    </div>
+
+                    <div class="cinfo">
+                        <h5>Call Me At</h5>
+                        <p>
+                            Mobile: (+91) 955 477 9907<br>
+                        </p>
+                    </div>
+
+                    <ul class="contact-social">
+                        <li>
+                            <a href="{{ absolute_url('https://linkedin.com/in/atfjmlans') }}" target="_blank"
+                                rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="{{ absolute_url('https://twitter.com/atfjmlans') }}" target="_blank"
+                                rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="{{ absolute_url('https://github.com/atfjmlans') }}" target="_blank"
+                                rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        </li>
+                        <li>
+                            <a href="{{ absolute_url('https://join.skype.com/invite/Yj0y7MtNA9qd') }}"><i
+                                    class="fab fa-skype" target="_blank" rel="noopener noreferrer"></i></a>
+                        </li>
+                        <li>
+                            <a href="mailto:atifjamalansari@outlook.com"><i class="fas fa-envelope" target="_blank"
+                                    rel="noopener noreferrer"></i></a>
+                        </li>
+                    </ul> <!-- end contact-social -->
+
+                </div> <!-- end contact-info -->
+            </div> <!-- end contact-secondary -->
+
+        </div> <!-- end contact-content -->
+
+    </section> <!-- end s-contact -->
+
+    <!-- footer
+        ================================================== -->
+    {% include 'includes/footer.html.twig' %}
+    <!-- end footer -->
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <!-- Registration Js -->
+    <script src="{{ asset('js/registration.js') }}"></script>
 {% endblock %}

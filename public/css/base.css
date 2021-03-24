@@ -890,6 +890,18 @@ textarea {
     margin-bottom: 3rem !important;
 }
 
+.remove-top {
+    margin-top: 0;
+}
+
+.half-top {
+    margin-top: 1.5rem !important;
+}
+
+.add-top {
+    margin-top: 3rem !important;
+}
+
 .no-border {
     border: none;
 }

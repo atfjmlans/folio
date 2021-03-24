@@ -26,6 +26,16 @@ class FrontendController extends AbstractController
     }
     
     /**
+     * @Route("/terms", name="terms", methods={"GET"})
+     */
+    public function terms(): Response
+    {
+        return $this->render('frontend/terms.html.twig', [
+            'controller_name' => 'FrontendController',
+        ]);
+    }
+    
+    /**
      * @Route("/", name="contact", methods={"POST"})
      */
     public function contact(Request $request, MailerInterface $mailer): Response
@@ -68,10 +78,9 @@ class FrontendController extends AbstractController
                 ]);
             $mailer->send($email);
 
-           // returns '{"data":"$contact", "status":200}' and sets the proper Content-Type header
+           // returns response as JSON
             return $this->json(['data' => $contact, 'status' => 200]);
-            // the shortcut defines three optional arguments
-            // return $this->json($data, $status = 200, $headers = [], $context = []);
+
         } else {
             return 'Something went wrong, please try again!';
         }

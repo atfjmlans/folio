@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Log in {% endblock %}
+{% block title %} Atif Jamal Ansari | Login {% endblock %}
 
 {% block body %}
 
@@ -13,8 +13,9 @@
 
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
-                <h3 class="subhead">Contact Me</h3>
-                <h1 class="display-2 display-2--light">Reach out for a new project or just say hello</h1>
+                <h3 class="subhead">Welcome Administrator !</h3>
+                <h1 class="display-2 display-2--light">Login to access the dashboard and manage the web application</h1>
+
             </div>
         </div>
 
@@ -22,37 +23,42 @@
             
             <div class="contact-primary">
 
-                <h3 class="h6">Send Me A Message</h3>
+                <h3 class="h5">Enter your credentials to login or if you dont't have an account please register
+                    <a href="{{ path('register') }}">here</a>
+                </h3>
 
-                <form name="contactForm" id="contactForm" method="POST" action="{{ path('contact') }}" novalidate="novalidate">
+
+                <form name="loginForm" id="loginForm" method="POST" action="{{ path('login') }}" novalidate="novalidate">
                     <fieldset>
     
-                    <div class="form-field">
-                        <input name="contactName" type="text" id="contactName" placeholder="Your Name" aria-required="true" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" aria-required="true" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" aria-required="true" class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <input name="contactPhone" type="text" id="contactPhone" placeholder="Phone"class="full-width">
-                    </div>
-                    <div class="form-field">
-                        <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" aria-required="true" class="full-width"></textarea>
-                    </div>
-                    <div class="form-field">
-                        <button class="full-width btn--primary">Submit</button>
-                        <div class="submit-loader">
-                            <div class="text-loader">Sending...</div>
-                            <div class="s-loader">
-                                <div class="bounce1"></div>
-                                <div class="bounce2"></div>
-                                <div class="bounce3"></div>
+                        <div class="form-field">
+                            <input name="username" type="text" id="username" placeholder="Username" aria-required="true" class="full-width">
+                        </div>
+                        <div class="form-field">
+                            <input name="password" type="password" id="password" placeholder="Password" aria-required="true" class="full-width">
+                        </div>
+                        <div class="full-width">
+                            <label class="add-top">
+                                <input type="checkbox">
+                                <span class="label-text" name="terms">
+                                    <small>
+                                        Remember me
+                                    </small>
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="form-field">
+                            <button class="full-width btn--primary">Submit</button>
+                            <div class="submit-loader">
+                                <div class="text-loader">Sending...</div>
+                                <div class="s-loader">
+                                    <div class="bounce1"></div>
+                                    <div class="bounce2"></div>
+                                    <div class="bounce3"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
     
                     </fieldset>
                 </form>
@@ -77,52 +83,73 @@
                     <div class="cinfo">
                         <h5>Where to Find Me</h5>
                         <p>
-                            1600 Amphitheatre Parkway<br>
-                            Mountain View, CA<br>
-                            94043 US
+                            Mominpur, Atala<br>
+                            Prayagraj, UP<br>
+                            211003 IN
                         </p>
                     </div>
 
                     <div class="cinfo">
                         <h5>Email Me At</h5>
                         <p>
-                            contact@glintsite.com<br>
-                            info@glintsite.com
+                            atifjamalansari@outlook.com<br>
                         </p>
                     </div>
 
                     <div class="cinfo">
                         <h5>Call Me At</h5>
                         <p>
-                            Phone: (+63) 555 1212<br>
-                            Mobile: (+63) 555 0100<br>
-                            Fax: (+63) 555 0101
+                            Mobile: (+91) 955 477 9907<br>
                         </p>
                     </div>
 
                     <ul class="contact-social">
                         <li>
-                            <a href="{{ absolute_url('https://linkedin.com/in/atfjmlans') }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                            <a href="{{ absolute_url('https://linkedin.com/in/atfjmlans') }}" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
                         </li>
                         <li>
-                            <a href="{{ absolute_url('https://twitter.com/atfjmlans') }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                            <a href="{{ absolute_url('https://twitter.com/atfjmlans') }}" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-twitter"></i>
+                            </a>
                         </li>
                         <li>
-                            <a href="{{ absolute_url('https://github.com/atfjmlans') }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                            <a href="{{ absolute_url('https://github.com/atfjmlans') }}" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                            </a>
                         </li>
                         <li>
-                            <a href="{{ absolute_url('https://join.skype.com/invite/Yj0y7MtNA9qd') }}"><i class="fab fa-skype" target="_blank" rel="noopener noreferrer"></i></a>
+                            <a href="{{ absolute_url('https://join.skype.com/invite/Yj0y7MtNA9qd') }}">
+                                <i class="fab fa-skype" target="_blank" rel="noopener noreferrer"></i>
+                            </a>
                         </li>
                         <li>
-                            <a href="mailto:atifjamalansari@outlook.com"><i class="fas fa-envelope" target="_blank" rel="noopener noreferrer"></i></a>
+                            <a href="mailto:atifjamalansari@outlook.com">
+                                <i class="fas fa-envelope" target="_blank" rel="noopener noreferrer"></i>
+                            </a>
                         </li>
-                    </ul> <!-- end contact-social -->
+                    </ul>
+                    <!-- end contact-social -->
 
-                </div> <!-- end contact-info -->
-            </div> <!-- end contact-secondary -->
+                </div>
+                <!-- end contact-info -->
+            </div>
+            <!-- end contact-secondary -->
+
 
         </div> <!-- end contact-content -->
 
     </section> <!-- end s-contact -->
 
+    <!-- footer
+            ================================================== -->
+    {% include 'includes/footer.html.twig' %}
+    <!-- end footer -->
 {% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	<!-- Login Js -->
+	<script src="{{ asset('js/login.js') }}"></script>
+{% endblock %}
+ 

@@ -90,7 +90,7 @@ body {
  * ## links
  * ------------------------------------------------------------------- */
 a {
-    color: #0087cc;
+    color: rgba(255, 255, 255, 0.15);
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
@@ -706,12 +706,11 @@ select:focus {
 }
 
 label, legend {
-    font-family: "montserrat-regular", sans-serif;
+    font-family: "montserrat-light", sans-serif;
     font-size: 1.4rem;
     font-weight: bold;
     margin-bottom: .9rem;
     line-height: 1.714;
-    color: #000000;
     display: block;
 }
 
@@ -725,6 +724,17 @@ label > .label-text {
     font-family: "montserrat-regular", sans-serif;
     font-weight: normal;
     line-height: inherit;
+}
+
+label > .error {
+    font-family: "montserrat-light", sans-serif;
+    color: #FF0000;
+    font-size: .9rem;
+    font-weight: bold;
+    position: absolute;
+    margin: 2.5rem 1.5rem;
+    line-height: 1.714;
+    display: inline-block;
 }
 
 label > input[type="checkbox"], 
