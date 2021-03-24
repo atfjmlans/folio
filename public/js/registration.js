@@ -46,45 +46,45 @@
             },
 
             /* submit via ajax */
-            // submitHandler: function (form) {
+            submitHandler: function (form) {
 
-            //     var sLoader = $('.submit-loader');
-            //     var formUrl = $(form).attr('action');
-            //     var formData = $(form).serialize();
+                var sLoader = $('.submit-loader');
+                var formUrl = $(form).attr('action');
+                var formData = $(form).serialize();
 
-            //     $.ajax({
+                $.ajax({
 
-            //         type: "POST",
-            //         url: formUrl,
-            //         data: formData,
-            //         beforeSend: function () {
+                    type: "POST",
+                    url: formUrl,
+                    data: formData,
+                    beforeSend: function () {
 
-            //             sLoader.slideDown("slow");
+                        sLoader.slideDown("slow");
 
-            //         },
-            //         success: function (response) {
+                    },
+                    success: function (response) {
 
-            //             // Message was sent
-            //             if (response.status == 200) {
-            //                 form.reset();
-            //                 sLoader.slideUp("slow");
-            //                 $('.message-success').html(response.message);
-            //                 $('.message-success').slideDown("slow");
-            //                 $('.message-success').fadeOut(5000);
-            //             }
+                        // Message was sent
+                        if (response.status == 200) {
+                            form.reset();
+                            sLoader.slideUp("slow");
+                            $('.message-success').html(response.message);
+                            $('.message-success').slideDown("slow");
+                            $('.message-success').fadeOut(5000);
+                        }
                     
-            //         },
-            //         error: function () {
+                    },
+                    error: function () {
 
-            //             sLoader.slideUp("slow");
-            //             $('.message-warning').html("Something went wrong. Please try again.");
-            //             $('.message-warning').slideDown("slow");
-            //             $('.message-warning').fadeOut(5000);
+                        sLoader.slideUp("slow");
+                        $('.message-warning').html("Something went wrong. Please try again.");
+                        $('.message-warning').slideDown("slow");
+                        $('.message-warning').fadeOut(5000);
 
-            //         }
+                    }
 
-            //     });
-            // }
+                });
+            }
 
         });
     };

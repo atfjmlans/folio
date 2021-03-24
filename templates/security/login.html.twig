@@ -32,15 +32,16 @@
                     <fieldset>
     
                         <div class="form-field">
-                            <input name="username" type="text" id="username" placeholder="Username" aria-required="true" class="full-width">
+                            <input name="username" type="text" id="username" placeholder="Username" value="{{username}}" aria-required="true" class="full-width">
                         </div>
                         <div class="form-field">
                             <input name="password" type="password" id="password" placeholder="Password" aria-required="true" class="full-width">
                         </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                         <div class="full-width">
                             <label class="add-top">
                                 <input type="checkbox">
-                                <span class="label-text" name="terms">
+                                <span class="label-text" name="_remember_me">
                                     <small>
                                         Remember me
                                     </small>

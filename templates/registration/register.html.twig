@@ -44,8 +44,8 @@
                         </div>
                         <div class="full-width">
                             <label class="add-top">
-                                {{ form_widget(registrationForm.roles, {'full_name': 'roles[]', 'id': 'roles'}) }}
-                                <span class="label-text" name="roles[]" value="Administrator">
+                                {{ form_widget(registrationForm.roles, {'full_name': 'roles', 'id': 'roles', 'value': 'Administrator'}) }}
+                                <span class="label-text" name="roles" value="Administrator">
                                     <small>
                                         Is Administrator?
                                     </small>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="full-width">
                             <label class="half-bottom">
-                                {{ form_widget(registrationForm.terms, {'full_name': 'terms', 'id': 'terms'}) }}
+                                {{ form_widget(registrationForm.terms, {'full_name': 'terms', 'id': 'terms', 'value': 'Terms and Conditions'}) }}
                                 <span class="label-text" name="terms">
                                     <small>
                                         I've read and agreed to the <a href="{{ path('terms') }}" target="_blank" rel="noopener noreferrer">terms and conditions</a> 

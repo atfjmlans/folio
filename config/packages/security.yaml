@@ -21,6 +21,10 @@ security:
             guard:
                 authenticators:
                     - App\Security\Authenticator
+            remember_me:
+                secret:   '%kernel.secret%'
+                # 30 days in seconds
+                lifetime: 2592000 
             logout:
                 path: logout
                 # where to redirect after logout
