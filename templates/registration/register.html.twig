@@ -40,14 +40,14 @@
 
                     <fieldset>
                         <div class="form-field">
-                            {{ form_widget(registrationForm.username, {'full_name': 'username', 'id': 'username', 'attr': {'placeholder': 'Username', 'class': 'full-width'}}) }}
+                            {{ form_widget(registrationForm.username, {'attr': {'placeholder': 'Username', 'class': 'full-width'}}) }}
                         </div>
                         <div class="form-field">
-                            {{ form_widget(registrationForm.password, {'full_name': 'password', 'id': 'password', 'attr': {'placeholder': 'Password', 'class': 'full-width'}}) }}
+                            {{ form_widget(registrationForm.password, {'attr': {'placeholder': 'Password', 'class': 'full-width'}}) }}
                         </div>
                         <div class="full-width">
                             <label class="add-top">
-                                {{ form_widget(registrationForm.roles, {'full_name': 'roles', 'id': 'roles', 'value': 'Administrator'}) }}
+                                {{ form_widget(registrationForm.roles, {'value': 'Administrator'}) }}
                                 <span class="label-text" name="roles" value="Administrator">
                                     <small>
                                         Is Administrator?
@@ -57,7 +57,7 @@
                         </div>
                         <div class="full-width">
                             <label class="half-bottom">
-                                {{ form_widget(registrationForm.terms, {'full_name': 'terms', 'id': 'terms', 'value': 'I Agree'}) }}
+                                {{ form_widget(registrationForm.terms, {'value': 'I Agree'}) }}
                                 <span class="label-text" name="terms">
                                     <small>
                                         I've read and agreed to the <a href="{{ path('terms') }}" target="_blank" rel="noopener noreferrer">terms and conditions</a> 

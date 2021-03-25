@@ -32,6 +32,26 @@
 
 
                 <form name="loginForm" id="loginForm" method="POST" action="{{ path('login') }}" novalidate="novalidate">
+                    {% if error %}
+                        <div class="alert-box alert-box--error hideit">
+                            <p>
+                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                            </p>
+                            <i class="fa fa-times alert-box__close" aria-hidden="true"></i>
+                        </div>
+
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="alert-box alert-box--info hideit">
+                            <p>
+                                You are logged in as {{ app.user.username }}, <a href="{{ path('logout') }}">Logout</a>
+                            </p>
+                            <i class="fa fa-times alert-box__close" aria-hidden="true"></i>
+                        </div>
+
+                    {% endif %}
+
                     <fieldset>
     
                         <div class="form-field">

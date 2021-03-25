@@ -62,16 +62,19 @@
                         sLoader.slideDown("slow");
 
                     },
-                    success: function (response) {
+                    success: function () {
 
                         // Message was sent
-                        if (response.status == 200) {
-                            form.reset();
-                            sLoader.slideUp("slow");
-                            $('.message-success').html(response.message);
-                            $('.message-success').slideDown("slow");
-                            $('.message-success').fadeOut(5000);
-                        }
+                        form.reset();
+                        sLoader.slideUp("slow");
+                        $('.message-success').html("Registration successful! redirecting ...");
+                        $('.message-success').slideDown("slow");
+                        $('.message-success').fadeOut(5000);
+
+                        // Redirect to dashboard
+                        setTimeout(function () {
+                            $(location).attr('href', appUrl + 'dashboard');
+                        }, 3000);
                     
                     },
                     error: function () {

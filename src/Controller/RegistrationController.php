@@ -22,8 +22,6 @@ class RegistrationController extends AbstractController
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
-        $formFactory = $this->get('form.factory');
-        $form = $formFactory->createNamed('registrationForm', RegistrationFormType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
