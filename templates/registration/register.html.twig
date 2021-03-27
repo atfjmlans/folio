@@ -9,7 +9,7 @@
 
     <!-- contact
         ================================================== -->
-    <section id="contact" class="s-contact">
+    <section id='contact' class="s-contact">
 
         <div class="overlay"></div>
         <div class="contact__line"></div>
@@ -60,7 +60,7 @@
                                 {{ form_widget(registrationForm.terms, {'value': 'I Agree'}) }}
                                 <span class="label-text" name="terms">
                                     <small>
-                                        I've read and agreed to the <a href="{{ path('terms') }}" target="_blank" rel="noopener noreferrer">terms and conditions</a> 
+                                        I've read and agreed to the <a href="{{ path('legal', { slug: 'terms'}) }}" target="_blank" rel="noopener noreferrer">terms and conditions</a> 
                                     </small>
                                 </span>
                             </label>

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Atif Jamal Ansari | Dashboard {% endblock %}
+
+{% block body %}
+
+    <!-- header
+        ================================================== -->
+    {% include 'includes/header.html.twig' %}
+    <!-- end s-header -->
+
+    <!-- services
+        ================================================== -->
+    <section id='services' class="s-services">
+
+        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">What I Do</h3>
+                <h1 class="display-2">I’ve got the essentials you need to launch and grow your business</h1>
+            </div>
+        </div>
+        <!-- end section-header -->
+
+        <div class="row services-list block-1-2 block-tab-full">
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-earth"></i>
+                </div>
+                <div class="service-text">
+                    <h3 class="h2">Web Development</h3>
+                    <ul class="disc">
+                        <li>Basic to Intermediate knowledge of LAMP (Linux, Apache, MYSQL, PHP) Stack Tools &amp; Technologies.</li>
+                        <li>Effective in maintaining, debugging Project Code Base &amp; adding new features and Modules as per requirements.</li>
+                        <li>Familiar with Web Hosting, DNS Management, Domain Registration as well as Server Administration.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-block service-item" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="icon-cube"></i>
+                </div>
+                <div class="service-text">
+                    <h3 class="h2">IT Support &amp; Maintenance</h3>
+                    <ul class="disc">
+                        <li>Mere knowledge in installing &amp; troubleshooting all major Windows &amp; Linux Operating System.</li>
+                        <li>Pro-efficient in installing Printers, Scanners, Switches, Modems &amp; Other Computer &amp; Networking Peripherals.</li>
+                        <li>Effective in maintaining, troubleshooting &amp; upgrading Computers &amp; Laptops.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- end services-list -->
+
+    </section>
+    <!-- end s-services -->
+
+    <!-- footer
+        ================================================== -->
+    {% include 'includes/footer.html.twig' %}
+    <!-- end footer -->
+
+
+{% endblock %}

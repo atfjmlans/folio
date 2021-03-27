@@ -12,9 +12,9 @@ class BackendController extends AbstractController
     /**
      * @Route("/dashboard", name="dashboard", methods={"GET"})
      */
-    public function index(): Response
+    public function dashboard(): Response
     {
-        return $this->render('backend/index.html.twig', [
+        return $this->render('backend/dashboard.html.twig', [
             'controller_name' => 'BackendController',
         ]);
     }

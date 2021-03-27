@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
 use App\Form\RegistrationFormType;
 use App\Security\Authenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,6 +33,10 @@ class RegistrationController extends AbstractController
                     $form->get('password')->getData()
                 )
             );
+
+            // creating an administrator account if no account is present
+            $user = $this->entityManager->getRepository(User::class)->findAll();
+            $roles = (!isset($user)) ? $user->setRoles( array('ROLE_ADMIN') ) : null ;
 
             // setting specific roles to a given users
             $roles = $form->get('roles')->getData();

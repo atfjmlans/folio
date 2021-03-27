@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if app.request.uri is same as 'http://localhost/portfolio/public/index.php/legal/privacy' %}
+        Atif Jamal Ansari | Privacy Policy
+    {% elseif app.request.uri is same as 'http://localhost/portfolio/public/index.php/legal/terms' %}
+        Atif Jamal Ansari | Terms &amp; Conditions
+    {% elseif app.request.uri is same as 'http://localhost/portfolio/public/index.php/legal/sitemap' %}
+        Atif Jamal Ansari | Sitemap
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+
+    <section id='legal' class="s-legal">
+
+        <div class="row" data-aos="fade-up">
+            <div class="col-full">
+                {% if app.request.uri is same as 'http://localhost/portfolio/public/index.php/legal/privacy' %}
+                    <div class="row section-header has-bottom-sep" data-aos="fade-up">
+                        <div class="col-full">
+                            <h3 class="subhead">Your privacy is important to us. This privacy statement explains the personal data we processes, how we processes, and for what purposes</h3>
+                            <h1 class="display-2">We are committed to protecting your personal information and your right to privacy</h1>
+                        </div>
+                    </div> <!-- end section-header -->
+                    {% include 'includes/privacy.html.twig' %}
+                {% elseif app.request.uri is same as 'http://localhost/portfolio/public/index.php/legal/terms' %}
+                    <div class="row section-header has-bottom-sep" data-aos="fade-up">
+                        <div class="col-full">
+                            <h3 class="subhead">Terms &amp; conditions</h3>
+                            <h1 class="display-2">There're few terms and conditions you must agree to use the service</h1>
+                        </div>
+                    </div> <!-- end section-header -->
+                    {% include 'includes/terms.html.twig' %}
+                {% elseif app.request.uri is same as 'http://localhost/portfolio/public/index.php/legal/sitemap' %}
+                    <div class="row section-header has-bottom-sep" data-aos="fade-up">
+                        <div class="col-full">
+                            <h3 class="subhead">Terms &amp; conditions</h3>
+                            <h1 class="display-2">There're few terms and conditions you must agree to use the service</h1>
+                        </div>
+                    </div> <!-- end section-header -->
+                    {% include 'includes/sitemap.html.twig' %}
+                {% endif %}
+            </div> <!-- end col-full -->
+        </div> <!-- end terms-conditions -->
+
+    </section>
+
+    <!-- footer
+    ================================================== -->
+    {% include 'includes/footer.html.twig' %}
+    <!-- end footer -->
+{% endblock %}

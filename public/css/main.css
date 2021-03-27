@@ -3467,7 +3467,7 @@ footer .row {
 .footer-bottom {
     margin-top: 5.4rem;
     text-align: center;
-    font-size: 14px;
+    font-size: 1.2rem;
 }
 
 .footer-bottom .copyright span {
@@ -3603,38 +3603,10 @@ footer .row {
 
 
 /* ===================================================================
- * # privacy
+ * # legal
  *
  * ------------------------------------------------------------------- */
-.s-privacy {
-    padding-top: 16.2rem;
-    padding-bottom: 16.8rem;
-    background-color: #F5F5F5;
-    color: #757575;
-    position: relative;
-}
-
-
-
-/* ===================================================================
- * # terms
- *
- * ------------------------------------------------------------------- */
-.s-terms {
-    padding-top: 16.2rem;
-    padding-bottom: 16.8rem;
-    background-color: #F5F5F5;
-    color: #757575;
-    position: relative;
-}
-
-
-
-/* ===================================================================
- * # sitemap
- *
- * ------------------------------------------------------------------- */
-.s-sitemap {
+.s-legal {
     padding-top: 16.2rem;
     padding-bottom: 16.8rem;
     background-color: #F5F5F5;
@@ -3646,10 +3618,19 @@ footer .row {
 /* ------------------------------------------------------------------- 
  * ## content
  * ------------------------------------------------------------------- */
-.privacy, .terms, .sitemap p {
-    font-family: "lora-regular", serif;
-    font-size: 2rem;
+.privacy, .terms, .sitemap, a {
+    color: #555555;
+}
+.privacy, .terms, .sitemap, a:hover,
+.privacy, .terms, .sitemap, a:focus,
+.privacy, .terms, .sitemap, a:active {
+    color: #000000;
+}
+.privacy, .terms, .sitemap, ol, ul {
+    font-size: 1.3rem;
+}
+.privacy, .terms, .sitemap, p {
+    font-size: 1.5rem;
     line-height: 1.8;
     color: #555555;
-    margin-bottom: 6rem;
 }
