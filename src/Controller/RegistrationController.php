@@ -35,7 +35,7 @@ class RegistrationController extends AbstractController
             );
 
             // creating an administrator account if no account is present
-            $user = $this->entityManager->getRepository(User::class)->findAll();
+            $user = $this->$entityManager->getRepository(User::class)->findAll();
             $roles = (!isset($user)) ? $user->setRoles( array('ROLE_ADMIN') ) : null ;
 
             // setting specific roles to a given users

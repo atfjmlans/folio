@@ -64,7 +64,7 @@
                         $('.message-success').html("Logged in successfully! redirecting ...");
                         $('.message-success').slideDown("slow");
                         $('.message-success').fadeOut(5000);
-                        
+
                         // Redirect to dashboard
                         setTimeout(function () {
                             $(location).attr('href', appUrl + 'dashboard');

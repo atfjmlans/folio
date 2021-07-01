@@ -236,46 +236,6 @@
     * ------------------------------------------------------ */
     var clSlickSlider = function() {
 
-        $('.clients').slick({
-            arrows: false,
-            dots: true,
-            infinite: true,
-            slidesToShow: 6,
-            slidesToScroll: 2,
-            //autoplay: true,
-            pauseOnFocus: false,
-            autoplaySpeed: 1000,
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 5
-                    }
-                },
-                {
-                    breakpoint: 1000,
-                    settings: {
-                        slidesToShow: 4
-                    }
-                },
-                {
-                    breakpoint: 800,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 500,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                }
-
-            ]
-        });
-
         $('.testimonials').slick({
             arrows: false,
             dots: true,
@@ -290,6 +250,33 @@
                     breakpoint: 900,
                     settings: {
                         slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 800,
+                    settings: {
+                        arrows: false,
+                        dots: true
+                    }
+                }
+            ]
+        });
+        
+        $('.content').slick({
+            arrows: true,
+            dots: false,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            adaptiveHeight: true,
+            pauseOnFocus: true,
+            autoplaySpeed: 1500,
+            responsive: [
+                {
+                    breakpoint: 900,
+                    settings: {
+                        slidesToShow: 3,
                         slidesToScroll: 1
                     }
                 },
@@ -340,6 +327,72 @@
         }); 
 
     };
+
+
+   /* Subscribe Form
+    * ------------------------------------------------------ */
+    var clSubscribeForm = function() {
+        
+        /* local validation */
+        $('#subscribeForm').validate({
+            rules: {
+                subscribeEmail: {
+                    required: true,
+                    email: true,
+                    maxlength: 50
+                }
+            },
+            messages: {
+                subscribeEmail: {
+                    required: "no email, no message",
+                    maxlength: "your email must not exeed 50 characters limit"
+                }
+            },
+        
+            /* submit via ajax */
+ /*            submitHandler: function(form) {
+    
+                var sLoader = $('.submit-loader');
+                var formUrl = $(form).attr('action');
+                var formData = $(form).serialize();
+    
+                $.ajax({
+    
+                    type: "POST",
+                    url: formUrl,
+                    data: formData,
+                    beforeSend: function() { 
+    
+                        sLoader.slideDown("slow");
+    
+                    },
+                    success: function(response) {
+    
+                        // Message was sent
+                        if (response.status == 200) {
+                            form.reset();
+                            sLoader.slideUp("slow"); 
+                            $('.message-success').html(response.message);
+                            $('.message-success').slideDown("slow");
+                            $('.message-success').fadeOut(3000);
+                        }
+    
+                    },
+                    error: function() {
+    
+                        sLoader.slideUp("slow"); 
+                        $('.message-warning').html("Something went wrong. Please try again.");
+                        $('.message-warning').slideDown("slow");
+                        $('.message-warning').fadeOut(3000);
+    
+                    }
+    
+                });
+            } */
+    
+        });
+    };
+
 
 
    /* Contact Form
@@ -498,6 +551,7 @@
         clSlickSlider();
         clSmoothScroll();
         clAlertBoxes();
+        clSubscribeForm();
         clContactForm();
         clAOS();
         clBackToTop();
